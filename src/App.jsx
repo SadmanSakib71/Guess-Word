@@ -17,9 +17,9 @@ function App() {
     setGuesses(updated);
 
     if (upper === SECRET) {
-      setMessage("You've won!");
+      setMessage("You've won the match!");
     } else if (updated.length === 5) {
-      setMessage("You've lost!");
+      setMessage("You've lost the match!");
     }
 
     setGuess("");
