@@ -25,33 +25,22 @@ function App() {
     setGuess("");
   };
 
-  const getColor = (letter, index) => {
-    if (SECRET[index] === letter) return "green";
-    if (SECRET.includes(letter)) return "yellow";
-    return "red";
+  const getCellClass = (letter, index) => {
+    if (!letter) return "letter-cell";
+    if (SECRET[index] === letter) return "letter-cell letter-cell--correct";
+    if (SECRET.includes(letter)) return "letter-cell letter-cell--present";
+    return "letter-cell letter-cell--absent";
   };
 
   return (
-    <div style={{ padding: 20 }}>
+    <div className="game">
       {Array.from({ length: 5 }).map((_, row) => (
-        <div key={row} style={{ display: "flex", marginBottom: 5 }}>
+        <div key={row} className="board-row">
           {Array.from({ length: 5 }).map((_, col) => {
             const letter = guesses[row]?.[col] || "";
 
             return (
-              <div
-                key={col}
-                style={{
-                  width: 50,
-                  height: 50,
-                  border: "1px solid black",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginRight: 5,
-                  backgroundColor: letter ? getColor(letter, col) : "white",
-                }}
-              >
+              <div key={col} className={getCellClass(letter, col)}>
                 {letter}
               </div>
             );
