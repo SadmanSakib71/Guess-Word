@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 
+const SECRET = "SPEND";
+
 function App() {
   const [guess, setGuess] = useState("");
   const [guesses, setGuesses] = useState([]);
