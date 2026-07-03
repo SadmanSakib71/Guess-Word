@@ -55,7 +55,9 @@ function App() {
             maxLength={5}
             onChange={(e) => setGuess(e.target.value)}
           />
-          <button onClick={submitGuess}>Guess</button>
+          <button className="guess-btn" onClick={submitGuess}>
+            Guess
+          </button>
         </>
       )}
 

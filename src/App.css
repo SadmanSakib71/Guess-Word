@@ -32,3 +32,6 @@
 .letter-cell--absent {
   background-color: red;
 }
+.guess-btn {
+  margin-top: 10px;
+}
