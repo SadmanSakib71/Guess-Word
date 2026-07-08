@@ -30,7 +30,7 @@
 }
 
 .letter-cell--absent {
-  background-color: red;
+  background-color: rgb(255, 20, 20);
 }
 .guess-btn {
   margin-top: 12px;
